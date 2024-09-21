@@ -1,0 +1,94 @@
+<html>
+<head>
+<script>
+function buton ()
+{
+window.open("https://www.youtube.com/c/TahaKeskin","_blank","width=1000 ,height=1000,top=400,left=300")
+var sayi1=document.getElementById("input1").value;
+var sayi2=document.getElementById("input2").value;
+var toplama=parseInt(sayi1)+parseInt(sayi2);
+var cikarma=parseInt(sayi1)-parseInt(sayi2);
+var carpma=parseInt(sayi1)*parseInt(sayi2);
+var bolme=parseInt(sayi1)/parseInt(sayi2);
+if(document.getElementById("to").checked)
+{document.getElementById("kutu").innerText=toplama}
+else if(document.getElementById("ci").checked)
+{document.getElementById("kutu").innerText=cikarma}
+else if(document.getElementById("ca").checked)
+{document.getElementById("kutu").innerText=carpma}
+else if(document.getElementById("bo").checked)
+{document.getElementById("kutu").innerText=bolme}
+}
+</script>
+<script>
+var sure=0;
+setInterval("zaman ()",1000)
+function zaman()
+{
+if(sure%2==1)
+{document.title="Hesap"}
+else
+{document.title="Makinesi"}
+sure++;
+}
+</script>
+<style>
+.hesap{;transition:0.5s;position:relative;left:23%;font:bold 50px comic sans ms ;width:250px; height:100px ; border-radius:100px; outline-style:none; text-align:center;animation:ani1 2s linear infinite;animation-direction:alternate}
+.hesap:hover{transform:translateY(10%)}
+.hesap:focus{;animation:ani2 0.5s linear infinite;animation-direction:alternate}
+.hesaptus{width:50px; height:50px }
+.hesaptus:hover{transform:translateY(10%)}
+@keyframes ani1
+{
+0%{color:cyan;border:10px solid red ;background:linear-gradient(45deg ,red 0% ,cyan 0%)}
+10%{background:linear-gradient(45deg ,red 10% ,cyan 10%)}
+20%{background:linear-gradient(45deg ,red 20% ,cyan 20%)}
+30%{background:linear-gradient(45deg ,red 30% ,cyan 30%)}
+40%{background:linear-gradient(45deg ,red 40% ,cyan 40%)}
+50%{background:linear-gradient(45deg ,red 50% ,cyan 50%)}
+60%{background:linear-gradient(45deg ,red 60% ,cyan 60%)}
+70%{background:linear-gradient(45deg ,red 70% ,cyan 70%)}
+80%{background:linear-gradient(45deg ,red 80% ,cyan 80%)}
+90%{background:linear-gradient(45deg ,red 90% ,cyan 90%)}
+100%{color:red;border:10px dashed cyan;background:linear-gradient(45deg ,red 100% ,cyan 100%)}
+}
+@keyframes ani2
+{
+0%{color:cyan;border:10px solid red ;background:linear-gradient(45deg ,red 0% ,cyan 0%);transform:translate(-7%);color:cyan;border:10px solid red}
+10%{background:linear-gradient(45deg ,red 10% ,cyan 10%)}
+20%{background:linear-gradient(45deg ,red 20% ,cyan 20%)}
+30%{background:linear-gradient(45deg ,red 30% ,cyan 30%)}
+40%{background:linear-gradient(45deg ,red 40% ,cyan 40%)}
+50%{background:linear-gradient(45deg ,red 50% ,cyan 50%)}
+60%{background:linear-gradient(45deg ,red 60% ,cyan 60%)}
+70%{background:linear-gradient(45deg ,red 70% ,cyan 70%)}
+80%{background:linear-gradient(45deg ,red 80% ,cyan 80%)}
+90%{background:linear-gradient(45deg ,red 90% ,cyan 90%)}
+100%{color:red;border:10px dashed cyan;background:linear-gradient(45deg ,red 100% ,cyan 100%) ;transform:translate(7%);color:red;border:10px dashed cyan}
+}
+@keyframes ani3
+{
+0%{color:cyan}
+100%{color:red}
+}
+@keyframes ani4
+{
+0%{border:5px dotted red}
+100%{border:5px dotted cyan}
+}
+</style>
+</head>
+<body style="background:#1a1a1a ; margin:0 ; padding:0 ; font:bold 50px comic sans ms ; animation:ani3 1s linear infinite;animation-direction:alternate">
+<form>
+<input type="text" id="input1" class="hesap">
+<input type="text" id="input2" class="hesap">
+<input type="button" onclick="buton ()" value="Tıkla" class="hesap"><br/>
++<input type="radio" id="to" name="hesap" class="hesaptus">Toplama<br/>
+-<input type="radio" id="ci" name="hesap" class="hesaptus">Çıkarma<br/>
+*<input type="radio" id="ca" name="hesap" class="hesaptus">Çarpma<br/>
+/<input type="radio" id="bo" name="hesap" class="hesaptus">Bölme
+</form>
+<div id="kutu" style="letter-spacing:10px;border-radius:50px; animation:ani4 0.5s linear infinite;width:500px ; height:230px ;position:fixed ; left:30% ; top:20%; text-align:center;padding:70px 0 0 0;font:bold 100px comic sans ms; -webkit-box-reflect:below 15px linear-gradient(to bottom , rgba(0,0,0,0) , rgba(0,0,0,0.4))"></div>
+
+</body>
+</html>
